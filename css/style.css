@@ -1,0 +1,751 @@
+@charset "UTF-8";
+/*j'importe les différents fichiers contenant le code CSS des différents bloc parents SASS NON INSTALLE DANS CETTE VERSION*/
+/*# sourceMappingURL=body.css.map */
+/*# sourceMappingURL=header.css.map */
+/*# sourceMappingURL=nav.css.map */
+/*# sourceMappingURL=main.css.map */
+/*# sourceMappingURL=aside.css.map */
+/*# sourceMappingURL=footer.css.map */
+/*# sourceMappingURL=style.css.map */
+
+/*couleur de travail*/
+/*body {    background-color: rgba(202, 202, 202, 0.2);}*/
+/*.header{  background: darkcyan;}*/
+/*.nav{     background: greenyellow;}*/
+/*.main{    background: darksalmon;}*/
+/*.aside{   background: lightpink;}*/
+/*.footer{  background: grey;}*/
+
+/*couleur bloc qui contient les images*/
+/*.img1{ background-color: #0055ff}*/
+/*.img2{ background-color: #ff5595}*/
+/*.img3{ background-color: #4bff5b}*/
+/*.img4{ background-color: #ffa500}*/
+/*.img5{ background-color: #5f9ea0}*/
+/*===============================================================================================*/
+/*===============================================================================================*/
+/*Paramètres génériques à tout les pages*/
+
+html {
+    font-family: Arial, Garamond, sans-serif;
+    font-size: 62.5%;
+    color: #000;
+}
+
+/*Positionnement blocs parents principaux*/
+
+.header { grid-area: header; }
+.nav { grid-area: nav; }
+.videos { grid-area: video; }
+.main { grid-area: main; }
+.videos-3d { grid-area: main; }
+.aside { grid-area: aside; }
+.footer { grid-area: footer; }
+
+/*Fin positionnement blocs parents*/
+
+/*===============================================================================================*/
+/*=====================================MOBIL FIRST===============================================*/
+/*===============================================================================================*/
+
+/*Création de la grille grid layout*/
+
+#first-container {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-areas:    "header header header header header header header header header header header header"
+                            "nav nav nav nav nav nav nav nav nav nav nav nav "
+                            "video video video video video video video video video video video video"
+                            "aside aside aside aside aside aside aside aside aside aside aside aside"
+                            "main main main main main main main main main main main main"
+                            "footer footer footer footer footer footer footer footer footer footer footer footer";
+}
+
+/*fin création grid layout*/
+/*-----------------------------------------------------------------------------------------------*/
+/*Début header*/
+
+.bloc-titre {
+    text-align: center;
+    color: #0a1414;
+    background-image: linear-gradient(120deg, rgb(86, 208, 195), rgb(86, 208, 195) 25%, rgb(218, 224, 242), rgb(143, 165, 218), rgb(153, 122, 225), rgb(191, 75, 242));
+    width: 60%;
+    margin: 8% auto;
+    border-radius: 2px;
+    box-shadow: 0 0 3px #0a1414;
+}
+
+.header h1 {
+    font-family: 'Bilbo', cursive;
+    font-size: 3.6rem;
+    font-weight: bold;
+    color: #05f;
+    mix-blend-mode: difference;
+    box-shadow: inset -25px 25px 40px rgba(0, 0, 0, .5),
+    2px 2px 5px rgba(3, 30, 1, 0.5),
+    5px 5px 7px rgba(0, 0, 0, .5),
+    2px 2px 10px rgb(255, 255, 255);
+}
+
+/*Fin header*/
+/*-----------------------------------------------------------------------------------------------*/
+/*Début nav*/
+
+.nav {
+    display: flex;
+    justify-content: space-around;
+    margin: 3%;
+}
+
+.cercle-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #f1e6f1;
+    font-weight: bold;
+    font-size: 1.2rem;
+    width: 80px;
+    height: 80px;
+    padding-top: 1.2%;
+    border-radius: 50%;
+    box-shadow: inset -25px 25px 40px rgba(0, 0, 0, .5),
+    2px 2px 5px rgba(3, 30, 1, 0.5),
+    2px 2px 10px rgba(0, 0, 0, .5),
+    2px 2px 25px rgb(255, 255, 255);
+    background: rgba(178, 34, 34, 0.9);
+}
+
+.logo-nav {
+    background-repeat: no-repeat;
+    background-position: 50% 20%;
+    background-size: 20px auto;
+}
+
+.logo-accueil {
+    background-image: url("../img/logo/home-blanc-50px.png");
+}
+
+.logo-galerie {
+    background-image: url("../img/logo/gallery-blanc-50px.png");
+}
+
+.logo-3d {
+    background-image: url("../img/logo/3d-blanc-50px.png");
+}
+
+/*Fin nav*/
+/*-----------------------------------------------------------------------------------------------*/
+/*Début videos*/
+
+.videos {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    margin: 6% auto;
+}
+
+/*code récupéré : permet à l'élément iframe d'avoir un ration correcte en position écran paysage*/
+.videos div {
+    position: relative; /*???*/
+    padding-top: 56.25%; /*donne le ration qui détermine la hauteur de l'iframe, si on modifie ce pourcentage, la hauteur de la fen^tre iframe change*/
+}
+
+.videos div:first-child {
+    margin-bottom: 6%;
+}
+
+.video-youtube {
+    border-right: 1px black solid;
+    border-bottom: 1px black solid;
+    padding: 0 1% 1% 0;
+    /*code récupéré permet à l'élément iframe d'avoir un ration correcte en position écran paysage*/
+    position: absolute; /*???*/
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /*fin ratio*/
+}
+
+.titre-video-youtube {
+    font-size: 2rem;
+    margin: 4% 0 2% 0;
+}
+
+/*Fin videos*/
+/*-----------------------------------------------------------------------------------------------*/
+/*Début main*/
+
+.main {
+    width: 96%;
+    margin: 4% auto 4% auto;
+    padding: 2% 0;
+    background-image: url("../img/fond/5.jpg");
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.jeux-photos {
+    display: grid;
+    grid-template-columns: repeat(24, 1fr);
+}
+
+.jeux-photos:first-child {
+    margin-top: 20%;
+}
+
+.jeux-photos:last-child {
+    margin-bottom: 20%;
+}
+
+.image-article {
+    box-shadow: 2px 2px 5px rgba(3, 30, 1, 0.65),
+    5px 5px 10px rgb(0, 0, 0),
+    2px 2px 25px rgb(255, 255, 255);
+}
+
+.img1 {
+    grid-column: 9 / 17;
+    grid-row: 2 / 10;
+    transform: rotate(15.5deg);
+}
+
+.img2 {
+    grid-column: 4 / 12;
+    grid-row: 6 / 14;
+    transform: rotate(355deg);
+}
+
+.img3 {
+    grid-column: 5 / 13;
+    grid-row: 11 / 19;
+    transform: rotate(5deg);
+}
+
+.img4 {
+    grid-column: 13 / 21;
+    grid-row: 13 / 21;
+    transform: rotate(345deg);
+}
+
+.img5 {
+    grid-column: 15 / 23;
+    grid-row: 7 / 15;
+    transform: rotate(350deg);
+}
+
+/*Fin main*/
+/*--------------------------------------------------------------------------------------------->>*/
+/*Début main imagePleinePage*/
+
+.bloc-image-grande {
+    display: grid;
+    grid-template-rows: 1fr 50px;
+    width: 96%;
+    margin: 0 auto;
+}
+
+.img-grande {
+    grid-row: 1 / 2;
+    margin-top: 5%;
+}
+
+.image-article-grande {
+    box-shadow: 0 0 10px black;
+    border: 6px solid seashell;
+    border-radius: 3px;
+}
+
+.legende-image {
+    display: flex;
+    justify-content: end;
+    font-size: 1.5rem;
+    margin-top: 8%;
+}
+
+.color-titre-author\> {
+    background-image: linear-gradient(120deg, rgb(86, 208, 195), rgb(86, 208, 195) 25%, rgb(218, 224, 242), rgb(143, 165, 218), rgb(153, 122, 225), rgb(191, 75, 242));
+    font-family: 'Bilbo', cursive;
+    font-size: 2.4rem;
+    letter-spacing: 4px;
+    font-weight: bold;
+    padding: 1.3% 1.5%;
+    border-radius: 3px;
+    box-shadow: inset -25px 25px 40px rgba(0, 0, 0, .5), 2px 2px 5px rgba(3, 30, 1, 0.5), 5px 5px 7px rgba(0, 0, 0, .5), 2px 2px 10px rgb(255, 255, 255);}
+
+.section-author {
+    background-color: rgba(210, 204, 196, 0.4);
+    font-size: 1rem;
+    font-style: italic;
+    margin: 0 3%;
+    height: 100%;
+    padding: 0.8% 2%;
+    border-radius: 2px;
+    border: rgba(51, 61, 83, 0.3) solid 1px;
+}
+
+.lien-retour {
+    grid-row: 4 / 5;
+    color: #000;
+    background-color: rgba(119, 136, 153, 0.56);
+    font-size: 1.8rem;
+    border: rgba(88, 96, 120, 0.61) solid 1px;
+    width: 100%;
+    padding: 3% 6%;
+    text-align: center;
+    vertical-align: middle;
+}
+
+/*Fin main imagePleinePage*/
+/*--------------------------------------------------------------------------------------------->>*/
+/*Début main galerie*/
+
+.main-gallery {
+    grid-column: 1 / 13;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /*je créer des colonnes aux nombres automatique avec auto-fit et je leur donne un taille minimu de 250px*/
+    grid-auto-rows: 350px;
+    grid-auto-flow: dense; /*je dit que je veux que tout les espaces soient occupés, sans vide ???????????????????* pour le resultat attendu, utilisation de javaScript necessaire*/
+    width: 96%;
+    margin: 4% auto 8% auto;
+    padding: 2% 0;
+    background-image: url("../img/fond/5.jpg");
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.bloc-img-gallery {
+    padding: 3% 6%;
+}
+
+.bloc-img-gallery img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/*Fin du main galerie*/
+/*-----------------------------------------------------------------------------------------------*/
+/*Début aside*/
+
+.aside h2 {
+    font-family: 'Bilbo', cursive;
+    font-size: 3rem;
+    margin: 2% 0 0 4%;
+}
+
+.aside h2::first-letter {
+    font-size: 4rem;
+    color: #0a1414;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.texte-article {
+    margin: 0 5% 5% 5%;
+    padding: 3%;
+    text-align: justify;
+    box-shadow: rgba(0, 139, 139, 0.11) 2px 2px 2px, rgba(10, 20, 20, 0.2) 2px 2px 2px, rgba(0, 0, 0, 0.24) 2px 2px 2px;
+}
+
+#bloc-texte {
+    line-height: 150%;
+}
+
+.suite {
+    font-style: italic;
+}
+
+/*Fin aside*/
+/*--------------------------------------------------------------------------------------------->>*/
+/*Début aside page texte*/
+
+#bloc-texte-page-texte {
+    font-size: 1.4rem;
+    line-height: 200%;
+    background-color: rgba(190, 190, 190, 0.2);
+}
+
+#bloc-texte-page-texte p {
+    margin-bottom: 4%;
+}
+
+#bloc-texte-page-texte p:first-letter {
+    font-weight: 600;
+    font-size: 1.6rem;
+}
+
+.citation-page-texte {
+    width: 80%;
+    margin: 5% auto;
+    padding: 4%;
+    font-style: italic;
+    border-left: 5px solid rgba(0, 0, 0, .8);
+    box-shadow: 1px 1px 10px rgba(143, 143, 143, 0.3);
+}
+
+.maxime {
+    font-style: italic;
+    font-weight: 600;
+}
+
+.author-citation-texte {
+    font-weight: 600;
+    font-style: normal;
+}
+
+/*Fin aside page texte*/
+/*--------------------------------------------------------------------------------------------->>*/
+/*Début aside page visite 3D iframe*/
+
+.iframe-responsive {
+    grid-column: 2/ 12;
+    margin: 2%; /*NE PAS METTRE AUTO sinon l'iframe disparait ??pourquoi??*/
+}
+
+.iframe-responsive {
+    position: relative;
+    padding-bottom: 56.25%; /* RATIO 16:9 */
+}
+
+.iframe-responsive iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/*Fin aside page visite 3D iframe*/
+/*-----------------------------------------------------------------------------------------------*/
+/*Début footer*/
+
+.footer {
+    width: 80%;
+    margin: 2% auto 5% auto;
+    padding: 5% 3%;
+    border-radius: 3px;
+    border-top: inset 1px #ff2;
+    background-color: #8F8F8F;
+}
+
+footer a {
+    color: #000;
+}
+
+.logo {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.logo-partenaire {
+    width: 25%;
+    margin: 2% 4%;
+}
+
+.contact {
+    width: 70%;
+    margin: 2% auto;
+}
+
+footer h3 {
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin: 4% 0 2% 2%;
+}
+
+.contact-mail {
+    line-height: 150%;
+    list-style: circle;
+    border-bottom: 1px black solid;
+    margin-bottom: 1%;
+}
+
+.realisation {
+    display: flex;
+    justify-content: center;
+    margin-top: 5%;
+    font-size: 0.8rem;
+}
+
+/*Fin footer*/
+
+/*===============================================================================================*/
+/*=====================================TABLETTE==================================================*/
+/*===============================================================================================*/
+
+/*Création de la grille grid layout*/
+
+@media (min-width: 920px) {
+
+    #first-container {
+        display: grid;
+        grid-template-columns: 30px repeat(10, 1fr) 30px;
+        grid-template-areas:        ". header header header . . . . . . . ."
+                                    ". nav nav nav aside aside aside aside aside aside aside ."
+                                    ". video video video aside aside aside aside aside aside aside ."
+                                    ". video video video main main main main main main main ."
+                                    ". . . . main main main main main main main ."
+                                    ". . . . main main main main main main main ."
+                                    ". footer footer footer footer footer footer footer footer footer footer .";
+        background-image: url("../img/fond/5.jpg");
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        background-size: cover;
+        padding: 5% 0;
+    }
+
+    /*fin création grid layout*/
+    /*-----------------------------------------------------------------------------------------------*/
+    /*Début header*/
+
+    .bloc-titre {
+        width: 90%;
+        margin-bottom: 5%;
+    }
+
+    .header h1 {
+        font-size: 4.8rem;
+    }
+
+    /*Fin header*/
+    /*-----------------------------------------------------------------------------------------------*/
+    /*Début videos*/
+
+    .titre-video-youtube {
+        font-size: 1.6rem;
+    }
+
+    /*Fin videos*/
+    /*-----------------------------------------------------------------------------------------------*/
+    /*Début main*/
+
+    .jeux1 { grid-area: jeux1; }
+    .jeux2 { grid-area: jeux2; }
+    .jeux3 { grid-area: jeux3; }
+    .jeux4 { grid-area: jeux4; }
+    .jeux5 { grid-area: jeux5; }
+    .jeux6 { grid-area: jeux6; }
+    .jeux7 { grid-area: jeux7; }
+    .jeux8 { grid-area: jeux8; }
+    .jeux9 { grid-area: jeux9; }
+
+    .main {
+        background-image: none;
+        background-color: rgba(190, 190, 190, 0.6);
+        box-shadow: 1px 1px 2px rgba(0, 139, 139, 0.11),
+        1px 1px 2px rgba(10, 20, 20, 0.2),
+        1px 1px 2px rgba(0, 0, 0, 0.24);
+        display: grid;
+        grid-template-columns: repeat(16, 1fr);
+        grid-template-areas:    "jeux1 jeux1 jeux1 jeux1 jeux1 jeux1 jeux1 jeux1 jeux2 jeux2 jeux2 jeux2 jeux2 jeux2 jeux2 jeux2"
+                                "jeux3 jeux3 jeux3 jeux3 jeux3 jeux3 jeux3 jeux3 jeux4 jeux4 jeux4 jeux4 jeux4 jeux4 jeux4 jeux4"
+                                "jeux5 jeux5 jeux5 jeux5 jeux5 jeux5 jeux5 jeux5 jeux6 jeux6 jeux6 jeux6 jeux6 jeux6 jeux6 jeux6"
+                                "jeux7 jeux7 jeux7 jeux7 jeux7 jeux7 jeux7 jeux7 jeux8 jeux8 jeux8 jeux8 jeux8 jeux8 jeux8 jeux8"
+                                "jeux9 jeux9 jeux9 jeux9 jeux9 jeux9 jeux9 jeux9 . . . . . . . .";
+    }
+
+
+    /*Fin main*/
+    /*--------------------------------------------------------------------------------------------->>*/
+    /*Début main imagePleinePage*/
+
+    .bloc-image-grande {
+        grid-column: 1 / 16;
+        width: 70%;
+        margin: 0 auto;
+    }
+
+    /*Fin main imagePleinePage*/
+    /*--------------------------------------------------------------------------------------------->>*/
+    /*Début main galerie*/
+    .main-gallery {
+        display: flex;
+        flex-wrap: wrap;
+        width: 70%;
+    }
+
+    .bloc-img-gallery {
+        width: 10%;
+        padding: 0;
+        margin: 0;
+    }
+
+    .bloc-img-gallery img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+    }
+
+    /*Fin du main galerie*/
+    /*-----------------------------------------------------------------------------------------------*/
+    /*Début aside*/
+
+    .aside {
+        background-color: rgba(190, 190, 190, 0.8);
+        font-size: 1.8rem;
+        width: 70%;
+        margin-left: auto;
+        margin-right: 2%;
+    }
+
+    .aside h2 {
+        font-size: 3.8rem;
+    }
+
+    .aside h2::first-letter {
+        font-size: 4.8rem;
+    }
+
+    /*Fin aside*/
+    /*--------------------------------------------------------------------------------------------->>*/
+    /*Début aside page texte*/
+
+    .aside {
+        width: 100%;
+    }
+
+    .article-page-texte {
+        margin-bottom: 3%;
+    }
+
+    #bloc-texte-page-texte {
+        line-height: 120%;
+    }
+
+    #bloc-texte-page-texte p {
+        margin-bottom: 4%;
+    }
+
+    /*Fin aside page texte*/
+    /*--------------------------------------------------------------------------------------------->>*/
+    /*Début aside page visite 3D iframe*/
+
+    .iframe-responsive {
+        grid-column: 5 / 11;
+        grid-row: 2/ 3;
+        margin-right: 6%;
+    }
+
+    /*Fin aside page visite 3D iframe*/
+    /*-----------------------------------------------------------------------------------------------*/
+    /*Début footer*/
+
+    .footer {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    .logo-partenaire {
+        width: 7%;
+    }
+
+    .contact {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    footer h3 {
+        font-size: 2rem;
+        margin-left: 15%;
+        margin-top: 1.2%;
+    }
+
+    .contact-mail {
+        font-size: 1.2rem;
+        width: 20%;
+        text-align: center;
+    }
+
+    .realisation {
+        font-size: .8rem;
+        letter-spacing: .2rem;
+        padding-bottom: 2%;
+    }
+
+    /*Fin footer*/
+
+}
+
+/*fin media query tablette*/
+
+/*===============================================================================================*/
+/*=====================================ORDINATEUR BUREAU=========================================*/
+/*===============================================================================================*/
+
+    /*Début main*/
+
+@media (min-width: 1280px) {
+
+    .main {
+        display: grid;
+        grid-template-columns: repeat(24, 1fr);
+        grid-template-areas:    "jeux1 jeux1 jeux1 jeux1 jeux1 jeux1 jeux1 jeux1 jeux2 jeux2 jeux2 jeux2 jeux2 jeux2 jeux2 jeux2 jeux3 jeux3 jeux3 jeux3 jeux3 jeux3 jeux3 jeux3"
+                                "jeux4 jeux4 jeux4 jeux4 jeux4 jeux4 jeux4 jeux4 jeux5 jeux5 jeux5 jeux5 jeux5 jeux5 jeux5 jeux5 jeux6 jeux6 jeux6 jeux6 jeux6 jeux6 jeux6 jeux6"
+                                "jeux7 jeux7 jeux7 jeux7 jeux7 jeux7 jeux7 jeux7 jeux8 jeux8 jeux8 jeux8 jeux8 jeux8 jeux8 jeux8 jeux9 jeux9 jeux9 jeux9 jeux9 jeux9 jeux9 jeux9";
+    }
+
+    /*Fin main*/
+    /*-----------------------------------------------------------------------------------------------*/
+    /*Début videos*/
+
+    .titre-video-youtube {
+        font-size: 2rem;
+    }
+
+    /*Fin videos*/
+}
+/*fin media query ordinateur*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*===============================================================================================*/
+/*=====================================modéle====================================================*/
+/*===============================================================================================*/
+/*Création de la grille grid layout*/
+/*-----------------------------------------------------------------------------------------------*/
+/*@media (min-width: 960px){*/
+/*    #first-container{*/
+
+/*    }*/
+/*}*/
+/*fin création grid layout*/
+/*-----------------------------------------------------------------------------------------------*/
+/*Début header*/
+/*Fin header*/
+/*-----------------------------------------------------------------------------------------------*/
+/*Début nav*/
+/*Fin nav*/
+/*-----------------------------------------------------------------------------------------------*/
+/*Début videos*/
+/*Fin videos*/
+/*-----------------------------------------------------------------------------------------------*/
+/*Début main*/
+/*Fin main*/
+/*-----------------------------------------------------------------------------------------------*/
+/*Début aside*/
+/*Fin aside*/
+/*-----------------------------------------------------------------------------------------------*/
+/*Début footer*/
+/*Fin footer*/
