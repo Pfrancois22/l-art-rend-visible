@@ -5,10 +5,11 @@
 
 Conceptualisation d'un site web réalisé ensuite en HTML et CSS pour qu'il soit responsive
 
-**langages**
+**Langages :**
 
     - HTML
     - CSS
 
 *chercher et visualiser le formatage markdown pour metre en forme se fichier de présentation des projets*
 
+*modification du code pouur un test*
