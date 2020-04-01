@@ -1,7 +1,7 @@
 # Mon premier projet DWWM (développeur web, web mobil) 
 # L'art rend visible
 
-![Instantané de mon accueil l'art rend visible](../img/preview.png)
+![Instantané de mon accueil l'art rend visible](preview.png)
 
 Conceptualisation d'un site web réalisé ensuite en HTML et CSS pour qu'il soit responsive
 
